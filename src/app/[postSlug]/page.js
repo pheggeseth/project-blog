@@ -7,6 +7,7 @@ import { loadBlogPost } from "@/helpers/file-helpers";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { cache } from "react";
 import CodeSnippet from "@/components/CodeSnippet";
+import DivisionGroupsDemo from "@/components/DivisionGroupsDemo";
 
 const loadPost = cache(loadBlogPost);
 
@@ -30,7 +31,7 @@ async function BlogPost({ params }) {
         <MDXRemote
           source={content}
           frontmatter={frontmatter}
-          components={{ pre: CodeSnippet }}
+          components={{ pre: CodeSnippet, DivisionGroupsDemo }}
         />
       </div>
     </article>
