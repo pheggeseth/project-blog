@@ -14,6 +14,9 @@ const DivisionGroupsDemo = dynamic(
   () => import("@/components/DivisionGroupsDemo"),
   { loading: Spinner }
 );
+const CircularColorsDemo = dynamic(() =>
+  import("@/components/CircularColorsDemo")
+);
 
 const loadPost = cache(loadBlogPost);
 
@@ -37,7 +40,11 @@ async function BlogPost({ params }) {
         <MDXRemote
           source={content}
           frontmatter={frontmatter}
-          components={{ pre: CodeSnippet, DivisionGroupsDemo }}
+          components={{
+            pre: CodeSnippet,
+            DivisionGroupsDemo,
+            CircularColorsDemo,
+          }}
         />
       </div>
     </article>
